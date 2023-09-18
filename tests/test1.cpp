@@ -2,10 +2,16 @@
 // Created by zach on 7/18/23.
 //
 
-#include <iostream>
+#include <gtest/gtest.h>
 
-int main()
-{
-    std::cout<<"Hello World"<<std::endl;
-    return 0;
+// Demonstrate some basic assertions.
+TEST(HelloTest, BasicAssertions) {
+// Expect two strings not to be equal.
+EXPECT_STRNE("hello", "world");
+// Expect equality.
+EXPECT_EQ(7 * 6, 42);
+}
+
+TEST(HelloTest, SecondTest) {
+    EXPECT_EQ(10, 2*5);
 }
