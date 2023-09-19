@@ -4,10 +4,9 @@ project(hybrid-mpc VERSION 0.1
         DESCRIPTION "Model Predictive Control for Hybrid Systems"
         LANGUAGES CXX)
 
-add_subdirectory(apps)
+add_subdirectory(src)
 
-# Test executable to make sure everything is functioning
-#add_executable(test tests/test1.cpp tests/test1.cpp)
+add_subdirectory(apps)
 
 option(PACKAGE_TESTS "Build the tests" ON) #PROJECT_NAME STREQUAL CMAKE_PROJECT_NAME)
 if(PACKAGE_TESTS)
