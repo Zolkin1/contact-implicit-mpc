@@ -4,7 +4,14 @@ project(hybrid-mpc VERSION 0.1
         DESCRIPTION "Model Predictive Control for Hybrid Systems"
         LANGUAGES CXX)
 
-add_subdirectory(src)
+set(CMAKE_PREFIX_PATH "$ENV{HOME}/drake")
+
+find_package(drake CONFIG REQUIRED)
+
+add_subdirectory(ci_mpc)
+
+# TODO: Make this optional (i.e. only for testing, not needed for hardware)
+add_subdirectory(simulation)
 
 add_subdirectory(apps)
 
